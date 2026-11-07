@@ -28,5 +28,6 @@ git/hub git adalah version control system yang terdistribusi untuk melacak apa s
 
 3 main area saat bekerja dengan git >> working directory : saat ingin melakukan perubahan dan belum masuk ke git repository, staging (?) : saat sudah melakukan perubahan, bisa Kembali lagi ke working area git repository : saat sudah yakin dengan perubahannya GitHub : repository online
 
-- git add : memindahkan file ke staging area
-git commit-m : menyimpan file repository dari staging area
+beberapa command git yang saya tangkap:
+>git add : memindahkan file ke staging area
+>git commit-m : menyimpan file repository dari staging area
