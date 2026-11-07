@@ -10,15 +10,15 @@ workshop from AI to GitHub
 
 repository git: GitHub gitlabs
 
-4 objektif yang akan dijelaskan mengidentifikasi repository dll membedakan apa itu git, apa itu GitHub dll :v
+4 objektif yang akan dijelaskan mengidentifikasi repository dll membedakan apa itu git, apa itu GitHub dll
 
 prompt engineering menginstruksi AI untuk mendapatkan hasil yang lebih baik
 
-prompt : instruksi
+prompt = instruksi
 
 apakah prompt dengan konteks better than prompt tanpa konteks? ga selalu
 
-yang namanya prompt hasil dari itu lah
+yang namanya prompt hasil dari komunikasi kita kepada AI
 
 manfaat prompt engineering: ## meningkatkan performa AI model meningkatkan control and predictability memberi pengalaman yang lebih baik
 
