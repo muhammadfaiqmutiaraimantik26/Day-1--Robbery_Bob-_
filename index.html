@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f5f0" />
+    <meta name="description" content="Belanja barang pilihan untuk keseharian di Loka Market." />
+    <title>Loka Market — Barang baik, tiap hari</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#beranda" aria-label="Loka Market, beranda">loka<span>.</span></a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a class="nav-link is-current" href="#beranda">Beranda</a>
+        <a class="nav-link" href="#produk">Produk</a>
+        <a class="nav-link" href="#tentang">Tentang</a>
+      </nav>
+      <button class="cart-trigger" id="open-cart" type="button" aria-label="Buka keranjang">
+        <span class="bag-icon" aria-hidden="true"></span>
+        <span class="cart-label">Keranjang</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </header>
+
+    <main id="beranda">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Pilihan kecil, dampak besar</p>
+          <h1 id="hero-title">Temukan barang<br />baik untuk <em>hari ini.</em></h1>
+          <p class="hero-description">Teman sehari-hari pilihan dari brand lokal. Dibuat dengan niat baik, untuk dipakai lebih lama.</p>
+          <a class="hero-cta" href="#produk">Jelajahi koleksi <span aria-hidden="true">↘</span></a>
+          <div class="hero-proof"><div class="proof-avatars" aria-hidden="true"><i>R</i><i>A</i><i>N</i></div><span>Disukai 2.000+ pelanggan</span></div>
+        </div>
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1200&q=85" alt="Ruang bernuansa hangat dengan pilihan barang untuk rumah" />
+          <div class="hero-note"><span class="note-mark">✳</span><span>Lebih sadar.<br /><strong>Lebih bermakna.</strong></span></div>
+          <span class="hero-index">01 / 04</span>
+        </div>
+        <div class="hero-side-label" aria-hidden="true">DIBUAT DENGAN HATI · DIPILIH UNTUKMU</div>
+      </section>
+
+      <section class="shop-section" id="produk" aria-labelledby="shop-title">
+        <div class="shop-heading">
+          <div>
+            <p class="section-kicker">PILIHAN MINGGU INI</p>
+            <h2 id="shop-title">Temukan favoritmu<span>.</span></h2>
+          </div>
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true"></span>
+            <input id="search-input" type="search" placeholder="Cari barang..." aria-label="Cari produk" />
+            <kbd>/</kbd>
+          </label>
+        </div>
+
+        <div class="shop-toolbar">
+          <div class="category-list" id="category-list" role="group" aria-label="Filter kategori">
+            <button class="category-chip is-active" type="button" data-category="Semua">Semua <span>08</span></button>
+            <button class="category-chip" type="button" data-category="Rumah">Rumah</button>
+            <button class="category-chip" type="button" data-category="Gaya">Gaya</button>
+            <button class="category-chip" type="button" data-category="Perawatan">Perawatan</button>
+            <button class="category-chip" type="button" data-category="Aksesori">Aksesori</button>
+          </div>
+          <label class="sort-control">Urutkan
+            <select id="sort-select" aria-label="Urutkan produk">
+              <option value="featured">Pilihan</option>
+              <option value="low">Harga terendah</option>
+              <option value="high">Harga tertinggi</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="product-grid" id="product-grid" aria-live="polite"></div>
+        <p class="empty-state" id="empty-state" hidden>Belum ada produk yang cocok. Coba kata kunci lain, ya.</p>
+      </section>
+
+      <section class="about-strip" id="tentang">
+        <span class="about-star" aria-hidden="true">✳</span>
+        <p>Belanja seperlunya. Pilih yang bermakna. <strong>Selalu dukung karya lokal.</strong></p>
+        <a href="#produk" aria-label="Lihat produk">↗</a>
+      </section>
+    </main>
+
+    <footer class="site-footer"><a class="wordmark" href="#beranda">loka<span>.</span></a><p>Barang baik, tiap hari.</p><span>© 2026 Loka Market</span></footer>
+
+    <div class="drawer-backdrop" id="drawer-backdrop" hidden></div>
+    <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-modal="true" role="dialog" aria-hidden="true">
+      <div class="drawer-header">
+        <div><p class="section-kicker">PILIHANMU</p><h2 id="cart-title">Keranjang <span id="drawer-count">(0)</span></h2></div>
+        <button class="icon-button" id="close-cart" type="button" aria-label="Tutup keranjang">×</button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-empty" id="cart-empty"><span aria-hidden="true">○</span><p>Keranjangmu masih kosong.</p><button id="continue-shopping" type="button">Lihat produk</button></div>
+      <div class="cart-footer" id="cart-footer" hidden>
+        <div class="subtotal-row"><span>Subtotal</span><strong id="cart-subtotal">Rp0</strong></div>
+        <p>Ongkos kirim dihitung saat checkout.</p>
+        <button class="checkout-button" id="checkout-button" type="button">Lanjut checkout <span aria-hidden="true">→</span></button>
+      </div>
+    </aside>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
